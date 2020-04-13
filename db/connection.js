@@ -5,6 +5,7 @@ const connFunction = function (dbName) {
   const conn = mongoose.createConnection(
     `mongodb://127.0.0.1:27017/${dbName}`,
     {
+      useCreateIndex: true,
       useNewUrlParser: true,
       useUnifiedTopology: true
     }

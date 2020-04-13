@@ -2,8 +2,8 @@
 const mongoose = require('mongoose');
 
 let StudentSchema = mongoose.Schema({
-  name: String,
-  age: Number
+  name: { type: String, required: true, index: { unique: true } },
+  age: { type: Number, required: true }
 })
 
 module.exports = StudentSchema;
