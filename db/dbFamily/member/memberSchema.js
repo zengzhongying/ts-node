@@ -7,7 +7,7 @@ let MemberSchema = mongoose.Schema({
   integral: { type: Number, required: true },
   isApplySS: { type: Boolean, require: true },
   password: { type: String, require: true },
-  isAdmin: { type: Boolean, require: true },
+  isAdmin: { type: Boolean, require: true }
 })
 
 module.exports = MemberSchema;
