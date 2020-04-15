@@ -1,6 +1,4 @@
 const express = require('express');
-const bodyParser = require("body-parser");
-express
 const router = express.Router();   //可使用 express.Router 类创建模块化、可挂载的路由句柄
 // 导入操作数据库模块
 const queryDB = require("../db/query");
@@ -8,16 +6,20 @@ const addDB = require("../db/add");
 const editDB = require("../db/edit");
 const delDB = require("../db/delete");
 
+
 router.get('/get', function (req, res) {
   queryDB.queryMember(req.query).then(data => {
     res.json(
       data.map(item => {
         return {
           uid: +item.uid,
+          userName: item.userName,
+          level: item.level,
           sortNumber: +item.sortNumber,
           integral: +item.integral,
+          integralDetail: item.integralDetail,
           isApplySS: item.isApplySS,
-          password: item.password,
+          // password: item.password,
           isAdmin: item.isAdmin
         }
       })
