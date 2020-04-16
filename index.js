@@ -5,12 +5,6 @@ const app = express();
 
 //引入路由模块
 const member = require('./routes/member.js');
-
-// const mongoose = require('mongoose');
-// const queryDB = require("./db/query");
-// const addDB = require("./db/add");
-// const editDB = require("./db/edit");
-// const delDB = require("./db/delete");
 const user = require("./outApi/getUser")
 app.use(bodyParser.json());
 //解決跨域
