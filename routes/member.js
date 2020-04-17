@@ -77,4 +77,31 @@ router.post('/delete', function (req, res) {
   })
 });
 
+router.post('/login', function (req, res) {
+  queryDB.queryMember(req.body).then(data => {
+    if (data.length > 0) {
+      let obj = {
+        integral: data[0].integral,
+        integralDetail: data[0].integralDetail,
+        isAdmin: data[0].isAdmin,
+        isApplySS: data[0].isApplySS,
+        level: data[0].level,
+        sortNumber: data[0].sortNumber,
+        uid: data[0].uid,
+        userName: data[0].userName
+      }
+      res.json({
+        msg: "登录成功",
+        success: true,
+        info: obj
+      })
+    } else {
+      res.json({
+        msg: "登录失败",
+        success: false
+      })
+    }
+  })
+});
+
 module.exports = router;   //暴露这个 router模块
