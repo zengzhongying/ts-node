@@ -2,7 +2,9 @@
 const mongoose = require('mongoose');
 
 let ssApplySchema = mongoose.Schema({
-  time: { type: Number, required: true }
+  time: { type: String, required: true },
+  boss: { type: String, required: true },
+  leader: { type: Object, required: true }
 })
 
 module.exports = ssApplySchema;

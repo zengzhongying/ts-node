@@ -5,12 +5,15 @@ const app = express();
 
 //引入路由模块
 const member = require('./routes/member.js');
+const ssList = require('./routes/ssList.js');
+
 const user = require("./outApi/getUser")
 app.use(bodyParser.json());
 //解決跨域
 app.use(cors());
 // 使用路由模块
 app.use('/member', member)
+app.use('/ssList', ssList)
 
 app.listen(8999, () => { console.log("服務啟動") });
 
