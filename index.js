@@ -15,7 +15,7 @@ app.use(cors());
 app.use('/member', member)
 app.use('/ssList', ssList)
 
-app.listen(8999, () => { console.log("服務啟動") });
+app.listen(8111, () => { console.log("服務啟動") });
 
 // 根据uid获取用户信息
 // http://statistics.pandadastudio.com/player/simpleInfo?uid=311484178
