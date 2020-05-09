@@ -104,4 +104,27 @@ router.post('/login', function (req, res) {
   })
 });
 
+router.post('/resetPwd', function (req, res) {
+  let queryObj = {
+    uid: req.body.uid,
+    password: req.body.password
+  }
+  queryDB.queryMember(queryObj).then(data => {
+    // 如果存在此成員
+    if (data.length > 0) {
+      editDB.editMember(req.body.uid, { password: req.body.newPassword }).then(editData => {
+        res.json({
+          msg: "密码修改成功",
+          success: true
+        })
+      })
+    } else {
+      res.json({
+        msg: "uid或密码错误",
+        success: false
+      })
+    }
+  })
+})
+
 module.exports = router;   //暴露这个 router模块
