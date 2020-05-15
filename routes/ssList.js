@@ -65,6 +65,7 @@ router.post('/done', async function (req, res) {
       mark: 3,
       desc: `贡献SS${req.body.boss}`
     })
+    memberInfo.integral += 3;
   } else {
     //如果超过10条  则删除最前面的一条  再插入数据
     memberInfo.integralDetail.shift();
@@ -72,6 +73,7 @@ router.post('/done', async function (req, res) {
       mark: 3,
       desc: `贡献SS${req.body.boss}`
     })
+    memberInfo.integral += 3;
   }
 
   // // 更新贡献SS的积分信息
