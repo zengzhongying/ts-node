@@ -41,6 +41,26 @@ router.post('/add', function (req, res) {
 });
 
 
+// 加入ss
+router.post('/join', function (req, res) {
+  console.log(req.body, "嘻嘻")
+  // let queryMemberRes = await queryDB.queryMember({ uid: req.body.leader.uid });
+  // addDB.addSS(req.body).then(data => {
+  //   res.json({
+  //     msg: "添加成功",
+  //     success: true
+  //   })
+  // }).catch(err => {
+  //   res.json({
+  //     msg: "添加失败" + err,
+  //     status: false
+  //   })
+  // })
+});
+
+
+
+
 router.post('/delete', function (req, res) {
   delDB.delSS(req.body).then(data => {
     res.json({
@@ -56,7 +76,6 @@ router.post('/delete', function (req, res) {
 });
 
 router.post('/done', async function (req, res) {
-
   let queryMemberRes = await queryDB.queryMember({ uid: req.body.leader.uid });
   let memberInfo = queryMemberRes[0];
   // console.log("积分信息", memberInfo)

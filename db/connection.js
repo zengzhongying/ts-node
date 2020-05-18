@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 //封裝  可以連接各個數據庫
 const connFunction = function (dbName) {
   const conn = mongoose.createConnection(
-    // `mongodb://127.0.0.1:27017/${dbName}`,   //本地數據庫
-    `mongodb://193.112.252.25:27017/${dbName}`,     //遠程服務器數據庫
+    `mongodb://127.0.0.1:27017/${dbName}`,   //本地數據庫
+    // `mongodb://193.112.252.25:27017/${dbName}`,     //遠程服務器數據庫
     {
       useCreateIndex: true,
       useNewUrlParser: true,
