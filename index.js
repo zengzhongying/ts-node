@@ -21,7 +21,7 @@ app.use('/ssList', ssList)
 https.createServer({
   key: fs.readFileSync('./module/2_nnnight.club.key'),//证书文件的存放目录
   cert: fs.readFileSync('./module/1_nnnight.club_bundle.crt')
-}, app).listen(443);//https默认是443端口
+}, app).listen(8111);//https默认是443端口
 
 // 根据uid获取用户信息
 // http://statistics.pandadastudio.com/player/simpleInfo?uid=311484178
